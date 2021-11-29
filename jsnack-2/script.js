@@ -9,7 +9,7 @@
  * In un secondo momento creiamo delle funzioni per i numeri random e per il check pari dispari
  */
 
-function radnomNumeroCpu(min, max) {
+function randomNumeroCpu(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
@@ -18,7 +18,7 @@ function sommaNumeri(num1, num2) {
 }
 
 const sceltaUtente = prompt("Inserisci Pari o Dispari");
-const randomCPU = radnomNumeroCpu (1, 5);
+const randomCPU = randomNumeroCpu (1, 5);
 const numeroUtente = parseInt(prompt("Inserisci un numero da 1 a 5"));
 const somma=sommaNumeri(numeroUtente, randomCPU);
 //console.log (somma);
