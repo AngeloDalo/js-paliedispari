@@ -9,7 +9,7 @@
  * In un secondo momento creiamo delle funzioni per i numeri random e per il check pari dispari
  */
 
- function radnomNumeroCpu(min, max) {
+ function randomNumeroCpu(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
@@ -17,15 +17,24 @@ function sommaNumeri(num1, num2) {
     return num1+num2;
 }
 
-const sceltaUtente = prompt("Inserisci Pari o Dispari");
-const randomCPU = radnomNumeroCpu (1, 5);
-const numeroUtente = parseInt(prompt("Inserisci un numero da 1 a 5"));
+let sceltaUtente = prompt("Inserisci pari o dispari");
+while (sceltaUtente!="pari" && sceltaUtente!="dispari") {
+    sceltaUtente = prompt("Inserisci pari o dispari (ATTENTO: TUTTO IN MINUSCOLO");
+}
+
+const randomCPU = randomNumeroCpu (1, 5);
+
+let numeroUtente = parseInt(prompt("Inserisci un numero da 1 a 5"));
+while (numeroUtente<1 || numeroUtente>5) {
+    numeroUtente = parseInt(prompt("Inserisci un numero da 1 a 5 ATTENTO:NUMERO COMPRESO TRA 1 E 5"));
+}
+
 const somma=sommaNumeri(numeroUtente, randomCPU);
 //console.log (somma);
 
-if ((somma%2 == 0) && (sceltaUtente=="Pari")) {
+if ((somma%2 == 0) && (sceltaUtente=="pari")) {
     alert ("HAI VINTO!");
-} else if ((somma%2 != 0) && (sceltaUtente == "Dispari")) {
+} else if ((somma%2 != 0) && (sceltaUtente == "dispari")) {
     alert ("HAI VINTO!");
 } else {
     alert ("HAI PERSO");
